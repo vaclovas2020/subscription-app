@@ -1,5 +1,5 @@
 ShopifyApp.configure do |config|
-  config.application_name = "My Shopify App"
+  config.application_name = "Best Subscription App"
   config.old_secret = ""
   config.scope = "read_products" # Consult this page for more scope options:
                                   # https://help.shopify.com/en/api/getting-started/authentication/oauth/scopes
@@ -23,3 +23,4 @@ end
 
 # ShopifyApp::Utils.fetch_known_api_versions                        # Uncomment to fetch known api versions from shopify servers on boot
 # ShopifyAPI::ApiVersion.version_lookup_mode = :raise_on_unknown    # Uncomment to raise an error if attempting to use an api version that was not previously known
+ShopifyApp.configuration.reauth_on_access_scope_changes = true
