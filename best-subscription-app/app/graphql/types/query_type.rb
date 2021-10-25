@@ -11,7 +11,13 @@ module Types
     field :test_field, String, null: false,
       description: "An example field added by the generator"
     def test_field
-      "Hello World!"
+      @result = "["
+      @products = ShopifyAPI::Product.find(:all, params: { limit: 10 })
+      @products.each do |product|
+        @result += "{\"title\":" + "\"#{product.title}\"}"
+      end
+      @result += "]"
+      return @result
     end
   end
 end
