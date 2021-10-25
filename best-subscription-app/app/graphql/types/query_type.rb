@@ -13,8 +13,11 @@ module Types
     def products
       result = "["
       products = ShopifyAPI::Product.find(:all, params: { limit: 10 })
+      i = 0
       products.each do |product|
+        result += "," if i > 0
         result += "{\"id\":#{product.id},\"title\":" + "\"#{product.title}\"}"
+        i+=1
       end
       result += "]"
       return result

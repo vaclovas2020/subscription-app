@@ -1,5 +1,5 @@
 import React from 'react';
-import { useIndexResourceState, Card, IndexTable, TextStyle } from '@shopify/polaris';
+import { useIndexResourceState, Card, IndexTable } from '@shopify/polaris';
 export default function ProductsList(props) {
   const products = props.products;
   const resourceName = {
@@ -31,7 +31,7 @@ export default function ProductsList(props) {
               selected={selectedResources.includes(id)}
               position={index}
             >
-              <IndexTable.Cell><TextStyle variation="strong">{title}</TextStyle></IndexTable.Cell>
+              <IndexTable.Cell>{title}</IndexTable.Cell>
             </IndexTable.Row>
           ),
         )}
