@@ -1,8 +1,9 @@
-import React from "react"
+import React from "react";
+import {useIndexResourceState, Card, IndexTable, TextStyle} from '@shopify/polaris';
 import { gql, useQuery } from '@apollo/client';
-import Product from "./Product";
+import ProductsList from "./ProductsList";
 const PRODUCTS_QUERY = gql`query { products }`;
-export default function ProductsData(){
+export default function ProductsData() {
   const { loading, error, data } = useQuery(PRODUCTS_QUERY);
   if (loading) {
     return (
@@ -13,10 +14,6 @@ export default function ProductsData(){
       <div>Something went wrong!</div>
     );
   } else {
-    return (
-      <div>{JSON.parse(data.products).map((product,i) => {
-        return ( <Product id={product.id} title={product.title} /> )
-      })}</div>
-    );
+      return (<ProductsList products={ JSON.parse(data.products) } />)
   }
 }
