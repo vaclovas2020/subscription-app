@@ -4,7 +4,7 @@ import {
   HttpLink,
   InMemoryCache,
 } from '@apollo/client';
-import { AppProvider, EmptyState, Page } from '@shopify/polaris';
+import { AppProvider, Page } from '@shopify/polaris';
 import { authenticatedFetch } from '@shopify/app-bridge-utils';
 import enTranslations from '@shopify/polaris/locales/en.json';
 import React from 'react';
@@ -23,9 +23,7 @@ export default function App() {
     <AppProvider i18n={enTranslations}>
       <ApolloProvider client={client}>
         <Page>
-          <EmptyState>
-          <ProductsData/>
-          </EmptyState>
+          <ProductsData />
         </Page>
       </ApolloProvider>
     </AppProvider>
