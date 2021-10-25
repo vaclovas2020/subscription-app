@@ -8,7 +8,7 @@ import { AppProvider, EmptyState, Page } from '@shopify/polaris';
 import { authenticatedFetch } from '@shopify/app-bridge-utils';
 import enTranslations from '@shopify/polaris/locales/en.json';
 import React from 'react';
-import TestData from './TestData';
+import ProductsData from './ProductsData';
 export default function App() {
   const client = new ApolloClient({
     link: new HttpLink({
@@ -24,7 +24,7 @@ export default function App() {
       <ApolloProvider client={client}>
         <Page>
           <EmptyState>
-            <TestData />
+          <ProductsData/>
           </EmptyState>
         </Page>
       </ApolloProvider>
