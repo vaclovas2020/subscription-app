@@ -20,7 +20,6 @@ export default function ProductsList(props) {
         }
         onSelectionChange={handleSelectionChange}
         headings={[
-          { title: 'Product ID' },
           { title: 'Product title' },
         ]}
       >
@@ -32,10 +31,7 @@ export default function ProductsList(props) {
               selected={selectedResources.includes(id)}
               position={index}
             >
-              <IndexTable.Cell>
-                <TextStyle variation="strong">{id}</TextStyle>
-              </IndexTable.Cell>
-              <IndexTable.Cell>{title}</IndexTable.Cell>
+              <IndexTable.Cell><TextStyle variation="strong">{title}</TextStyle></IndexTable.Cell>
             </IndexTable.Row>
           ),
         )}
